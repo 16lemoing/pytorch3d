@@ -29,6 +29,7 @@
 #include "points_to_volumes/points_to_volumes.h"
 #include "rasterize_meshes/rasterize_meshes.h"
 #include "rasterize_points/rasterize_points.h"
+#include "rasterize_points/rasterize_points_square.h"
 #include "sample_farthest_points/sample_farthest_points.h"
 #include "sample_pdf/sample_pdf.h"
 
@@ -53,6 +54,8 @@ PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
   m.def("points_to_volumes_backward", PointsToVolumesBackward);
   m.def("rasterize_points", &RasterizePoints);
   m.def("rasterize_points_backward", &RasterizePointsBackward);
+  m.def("rasterize_points_square", &RasterizePointsSquare);
+  m.def("rasterize_points_square_backward", &RasterizePointsSquareBackward);
   m.def("rasterize_meshes_backward", &RasterizeMeshesBackward);
   m.def("rasterize_meshes", &RasterizeMeshes);
   m.def("sigmoid_alpha_blend", &SigmoidAlphaBlend);
